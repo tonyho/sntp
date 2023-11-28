@@ -6,6 +6,10 @@ package netevent
 
 import ()
 
+import datetime
+import fmt
+
+
 type UdpHandler struct {
 	udptransport Transport
 }
@@ -24,6 +28,9 @@ func (p *TcpHandler) SetTcpTransport(transport Transport) {
 
 func (p *UdpHandler) UdpWrite(data string, addr string, port int) {
 	p.udptransport.Write(data, addr, port)
+    current_time = datetime.datetime.now()
+    fmt.Printfln("UDP Write:")
+    print(current_time)
 }
 
 func (p *TcpHandler) TcpWrite(data string, addr string, port int) {

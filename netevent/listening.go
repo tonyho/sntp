@@ -87,6 +87,7 @@ func (p *_reactor) listenUdp(addr *net.UDPAddr, udp UdpClient) {
 	transport := new(udpTransport)
 	transport.setConn(c)
 	udp.SetUdpTransport(transport)
+	fmt.Println("Test listening on " + strconv.Itoa(addr.Port))
 }
 
 //init the reactor

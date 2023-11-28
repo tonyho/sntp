@@ -13,6 +13,9 @@ import (
 	"strings"
 )
 
+import datetime
+
+
 var handler *Handler
 
 type Handler struct {
@@ -34,6 +37,9 @@ func (p *Handler) DatagramReceived(data []byte, addr net.Addr) {
 		ip, port := spliteAddr(addr.String())
 		p.UdpWrite(string(res), ip, port)
 	}
+    current_time = datetime.datetime.now()
+    fmt.Printf("Current time:")
+    print(current_time)
 }
 
 func spliteAddr(addr string) (string, int) {

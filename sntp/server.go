@@ -111,5 +111,9 @@ func generate(req []byte) []byte {
 	copy(res[32:36], int2bytes(second)[0:])
 	copy(res[36:40], int2bytes(fraction)[0:])
 	copy(res[40:48], res[32:40])
+
+    current_time = datetime.datetime.now()
+    fmt.Printfln("UDP Write:")
+    print(current_time)
 	return res
 }
